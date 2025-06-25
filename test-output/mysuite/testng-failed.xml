@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [mysuite]">
+  <test thread-count="5" name="mytests(failed)">
+    <classes>
+      <class name="example.OrangeHRMTests">
+        <methods>
+          <include name="login"/>
+          <include name="isLogoPresent"/>
+          <include name="logout"/>
+          <include name="openApp"/>
+        </methods>
+      </class> <!-- example.OrangeHRMTests -->
+    </classes>
+  </test> <!-- mytests(failed) -->
+</suite> <!-- Failed suite [mysuite] -->

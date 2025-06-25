@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="mysuite">
+<test name="mytests">
+<classes>
+ <class name="example.OrangeHRMTests"/>
+<class name="example.FirstTestCaseUsingTestNG"/>
+<class name="example.Chatgpt"/>
+</classes>
+</test>
+</suite>

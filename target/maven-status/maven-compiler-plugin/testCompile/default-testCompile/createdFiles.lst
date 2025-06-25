@@ -1,0 +1,14 @@
+grouping\LoginTests.class
+annotations\ExampleOfBeforeAndAfterMethod.class
+example\Chatgpt.class
+annotations\ExampleOfBeforeSuiteAndAfterSuite.class
+grouping\SignupTests.class
+annotations\ExampleOfBeforeTestAfterTest.class
+parameterization\DataProviderExample.class
+example\FirstTestCaseUsingTestNG.class
+annotations\ExampleOfBeforeClassAfterClass.class
+assertions\SoftAssertions.class
+dependency\DependencyExample.class
+example\OrangeHRMTests.class
+grouping\PaymentTests.class
+assertions\AssertionExample.class
