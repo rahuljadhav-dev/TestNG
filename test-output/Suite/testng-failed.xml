@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]">
-  <test thread-count="5" name="Test(failed)">
+  <listeners>
+    <listener class-name="testng_listeners.ListeneresUtil"/>
+  </listeners>
+  <test thread-count="5" name="Test1(failed)">
     <classes>
-      <class name="parameterization.DataProviderExample">
+      <class name="testng_listeners.OrangeHRM">
         <methods>
-          <include name="loginAndLogout" invocation-numbers="0 1 2 3 5"/>
-          <include name="close"/>
+          <include name="tearDown"/>
           <include name="setup"/>
+          <include name="checkTitle"/>
+          <include name="isLogoPresent"/>
+          <include name="openApp"/>
         </methods>
-      </class> <!-- parameterization.DataProviderExample -->
+      </class> <!-- testng_listeners.OrangeHRM -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

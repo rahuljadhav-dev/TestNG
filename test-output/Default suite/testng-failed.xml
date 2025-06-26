@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="parameterization.DataProviderExample">
+      <class name="practice.FormRegistration">
         <methods>
-          <include name="loginAndLogout" invocation-numbers="0 1 2 3 5"/>
-          <include name="close"/>
+          <include name="openApp"/>
           <include name="setup"/>
+          <include name="tearDown"/>
+          <include name="register"/>
         </methods>
-      </class> <!-- parameterization.DataProviderExample -->
+      </class> <!-- practice.FormRegistration -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

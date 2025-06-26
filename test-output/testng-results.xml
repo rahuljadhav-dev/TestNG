@@ -1,37 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="2" failed="5" skipped="0">
+<testng-results ignored="0" total="25" passed="24" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-25T17:34:11 IST" name="Suite" finished-at="2025-06-25T17:35:31 IST" duration-ms="79141">
+  <suite started-at="2025-06-26T22:57:20 IST" name="Suite" finished-at="2025-06-26T22:58:19 IST" duration-ms="59049">
     <groups>
     </groups>
-    <test started-at="2025-06-25T17:34:11 IST" name="Test" finished-at="2025-06-25T17:35:31 IST" duration-ms="79141">
-      <class name="parameterization.DataProviderExample">
-        <test-method is-config="true" signature="setup()[pri:0, instance:parameterization.DataProviderExample@78452606]" started-at="2025-06-25T17:34:11 IST" name="setup" finished-at="2025-06-25T17:34:15 IST" duration-ms="3961" status="PASS">
+    <test started-at="2025-06-26T22:57:20 IST" name="Test1" finished-at="2025-06-26T22:57:35 IST" duration-ms="15289">
+      <class name="testng_listeners.OrangeHRM">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testng_listeners.OrangeHRM@78452606]" started-at="2025-06-26T22:57:20 IST" name="setup" finished-at="2025-06-26T22:57:22 IST" duration-ms="1700" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginAndLogout(java.lang.String,java.lang.String)[pri:0, instance:parameterization.DataProviderExample@78452606]" started-at="2025-06-25T17:34:15 IST" name="loginAndLogout" data-provider="data" finished-at="2025-06-25T17:34:33 IST" duration-ms="17571" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="openApp()[pri:0, instance:testng_listeners.OrangeHRM@78452606]" started-at="2025-06-26T22:57:22 IST" name="openApp" finished-at="2025-06-26T22:57:26 IST" duration-ms="4100" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openApp -->
+        <test-method signature="isLogoPresent()[pri:0, instance:testng_listeners.OrangeHRM@78452606]" started-at="2025-06-26T22:57:26 IST" name="isLogoPresent" finished-at="2025-06-26T22:57:27 IST" depends-on-methods="testng_listeners.OrangeHRM.openApp" duration-ms="1108" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- isLogoPresent -->
+        <test-method signature="checkTitle()[pri:0, instance:testng_listeners.OrangeHRM@78452606]" started-at="2025-06-26T22:57:27 IST" name="checkTitle" finished-at="2025-06-26T22:57:27 IST" depends-on-methods="testng_listeners.OrangeHRM.isLogoPresent" duration-ms="30" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Login failed: Invalid credentials or dashboard not found.]]>
+              <![CDATA[expected [Orange] but found [OrangeHRM]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Login failed: Invalid credentials or dashboard not found.
+              <![CDATA[java.lang.AssertionError: expected [Orange] but found [OrangeHRM]
 at org.testng.Assert.fail(Assert.java:111)
-at parameterization.DataProviderExample.loginAndLogout(DataProviderExample.java:68)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:656)
+at org.testng.Assert.assertEquals(Assert.java:666)
+at testng_listeners.OrangeHRM.checkTitle(OrangeHRM.java:42)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -63,256 +64,559 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAndLogout -->
-        <test-method signature="loginAndLogout(java.lang.String,java.lang.String)[pri:0, instance:parameterization.DataProviderExample@78452606]" started-at="2025-06-25T17:34:33 IST" name="loginAndLogout" data-provider="data" finished-at="2025-06-25T17:34:44 IST" duration-ms="10428" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin5]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Admin123]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Login failed: Invalid credentials or dashboard not found.]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Login failed: Invalid credentials or dashboard not found.
-at org.testng.Assert.fail(Assert.java:111)
-at parameterization.DataProviderExample.loginAndLogout(DataProviderExample.java:68)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        </test-method> <!-- checkTitle -->
+        <test-method signature="loginAndLogout()[pri:3, instance:testng_listeners.OrangeHRM@78452606]" started-at="2025-06-26T22:57:27 IST" name="loginAndLogout" finished-at="2025-06-26T22:57:32 IST" duration-ms="4084" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAndLogout -->
-        <test-method signature="loginAndLogout(java.lang.String,java.lang.String)[pri:0, instance:parameterization.DataProviderExample@78452606]" started-at="2025-06-25T17:34:44 IST" name="loginAndLogout" data-provider="data" finished-at="2025-06-25T17:34:55 IST" duration-ms="10810" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin12]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Login failed: Invalid credentials or dashboard not found.]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Login failed: Invalid credentials or dashboard not found.
-at org.testng.Assert.fail(Assert.java:111)
-at parameterization.DataProviderExample.loginAndLogout(DataProviderExample.java:68)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testng_listeners.OrangeHRM@78452606]" started-at="2025-06-26T22:57:32 IST" name="tearDown" finished-at="2025-06-26T22:57:35 IST" duration-ms="3315" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAndLogout -->
-        <test-method signature="loginAndLogout(java.lang.String,java.lang.String)[pri:0, instance:parameterization.DataProviderExample@78452606]" started-at="2025-06-25T17:34:55 IST" name="loginAndLogout" data-provider="data" finished-at="2025-06-25T17:35:05 IST" duration-ms="10308" status="FAIL">
+        </test-method> <!-- tearDown -->
+      </class> <!-- testng_listeners.OrangeHRM -->
+    </test> <!-- Test1 -->
+    <test started-at="2025-06-26T22:57:36 IST" name="Test2" finished-at="2025-06-26T22:58:19 IST" duration-ms="42858">
+      <class name="practice.FormRegistration">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:57:36 IST" name="setup" finished-at="2025-06-26T22:57:37 IST" duration-ms="1506" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Admin]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Login failed: Invalid credentials or dashboard not found.]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Login failed: Invalid credentials or dashboard not found.
-at org.testng.Assert.fail(Assert.java:111)
-at parameterization.DataProviderExample.loginAndLogout(DataProviderExample.java:68)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginAndLogout -->
-        <test-method signature="loginAndLogout(java.lang.String,java.lang.String)[pri:0, instance:parameterization.DataProviderExample@78452606]" started-at="2025-06-25T17:35:05 IST" name="loginAndLogout" data-provider="data" finished-at="2025-06-25T17:35:12 IST" duration-ms="7336" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin123]]>
+                <![CDATA[chrome]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAndLogout -->
-        <test-method signature="loginAndLogout(java.lang.String,java.lang.String)[pri:0, instance:parameterization.DataProviderExample@78452606]" started-at="2025-06-25T17:35:12 IST" name="loginAndLogout" data-provider="data" finished-at="2025-06-25T17:35:23 IST" duration-ms="11002" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Login failed: Invalid credentials or dashboard not found.]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Login failed: Invalid credentials or dashboard not found.
-at org.testng.Assert.fail(Assert.java:111)
-at parameterization.DataProviderExample.loginAndLogout(DataProviderExample.java:68)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        </test-method> <!-- setup -->
+        <test-method signature="openApp()[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:57:37 IST" name="openApp" finished-at="2025-06-26T22:57:44 IST" duration-ms="6680" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAndLogout -->
-        <test-method signature="loginAndLogout(java.lang.String,java.lang.String)[pri:0, instance:parameterization.DataProviderExample@78452606]" started-at="2025-06-25T17:35:23 IST" name="loginAndLogout" data-provider="data" finished-at="2025-06-25T17:35:30 IST" duration-ms="6832" status="PASS">
+        </test-method> <!-- openApp -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:57:44 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:57:47 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="2364" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Admin]]>
+                <![CDATA[User1]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[admin123]]>
+                <![CDATA[user1@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675800]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginAndLogout -->
-        <test-method is-config="true" signature="close()[pri:0, instance:parameterization.DataProviderExample@78452606]" started-at="2025-06-25T17:35:30 IST" name="close" finished-at="2025-06-25T17:35:31 IST" duration-ms="548" status="PASS">
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:57:47 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:57:49 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1628" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user2@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675801]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 2]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- close -->
-      </class> <!-- parameterization.DataProviderExample -->
-    </test> <!-- Test -->
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:57:49 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:57:50 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1420" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user3@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675802]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:57:50 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:57:52 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1587" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user4@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675803]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 4]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:57:52 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:57:53 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1365" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User5]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user5@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675804]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 5]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:57:54 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:57:56 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1968" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User6]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user6@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675805]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 6]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:57:56 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:57:57 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1550" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User7]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user7@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675806]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 7]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:57:57 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:57:59 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1438" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User8]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user8@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675807]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:57:59 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:58:00 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1404" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User9]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user9@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675808]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:58:00 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:58:02 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1340" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User10]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user10@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675809]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 10]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:58:02 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:58:04 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1682" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User11]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user11@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675810]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 11]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:58:04 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:58:05 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1545" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User12]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user12@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675811]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 12]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:58:05 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:58:07 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1788" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User13]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user13@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675812]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 13]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:58:07 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:58:09 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1539" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User14]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user14@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675813]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 14]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:58:09 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:58:10 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1392" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User15]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user15@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675814]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 15]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:58:11 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:58:12 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1339" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User16]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user16@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675815]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 16]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:58:12 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:58:13 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1372" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User17]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user17@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675816]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 17]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:58:14 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:58:15 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1326" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user18@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675817]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 18]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:58:15 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:58:16 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1395" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User19]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user19@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675818]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 19]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method signature="register(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:58:17 IST" name="register" data-provider="formData" finished-at="2025-06-26T22:58:18 IST" depends-on-methods="practice.FormRegistration.openApp" duration-ms="1627" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[User20]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[user20@example.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8806675819]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Address 20]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- register -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:practice.FormRegistration@b86de0d]" started-at="2025-06-26T22:58:19 IST" name="tearDown" finished-at="2025-06-26T22:58:19 IST" duration-ms="306" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- practice.FormRegistration -->
+    </test> <!-- Test2 -->
   </suite> <!-- Suite -->
 </testng-results>
